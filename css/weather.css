@@ -1,0 +1,39 @@
+        html {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+ 
+body {
+    background-image: url(../img/cloudy_sky.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+ 
+.main {
+    border: 1px solid #0000;
+    background-color: rgb(245, 239, 239, 0.63);
+    width: 50%;
+    height: 45rem;
+    margin: auto;
+}
+ 
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 450px;
+    margin: auto;
+    padding-top: 2rem;
+}
+.boxe {
+    margin: 10px;
+    height: 200px;
+    width: 200px;
+    border: 1px solid grey;
+    box-shadow: 10px 0 0 0 black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

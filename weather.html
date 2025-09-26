@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/weather.css">
+    <title>Les Requêtes API</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Météo du jour</h1>
+        <form id="form">
+            <label for="city">Entrez un nom de ville</label>
+            <input type="text" id="city" />
+        </form>
+ 
+        <div class="container">
+ 
+            <div>
+                <p>Température :</p>
+                <div id="temp" class="boxe"></div>
+            </div>
+            <div>
+                <p>Ressentie :</p>
+                <div id="feels" class="boxe"></div>
+            </div>
+            <div>
+                <p>Humidité :</p>
+                <div id="humidity" class="boxe"></div>
+            </div>
+            <div>
+                <p>Vent :</p>
+                <div id="wind" class="boxe"></div>
+            </div>
+        </div>
+ 
+    </div>
+ 
+ 
+    <script src="js/api-weather.js"></script>
+</body>
+</html>
