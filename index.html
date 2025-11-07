@@ -1,42 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/weather.css">
-    <title>Les Requêtes API</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Météo du jour</title>
+  <link rel="stylesheet" href="css/weather.css" />
 </head>
 <body>
-    <div class="main">
+  <div class="wrap">
+    <main class="main">
+      <header>
         <h1>Météo du jour</h1>
-        <form id="form">
-            <label for="city">Entrez un nom de ville</label>
-            <input type="text" id="city" />
-        </form>
- 
-        <div class="container">
- 
-            <div>
-                <p>Température :</p>
-                <div id="temp" class="boxe"></div>
-            </div>
-            <div>
-                <p>Ressentie :</p>
-                <div id="feels" class="boxe"></div>
-            </div>
-            <div>
-                <p>Humidité :</p>
-                <div id="humidity" class="boxe"></div>
-            </div>
-            <div>
-                <p>Vent :</p>
-                <div id="wind" class="boxe"></div>
-            </div>
+        <p class="muted">
+          Saisissez une ville pour afficher la température, la ressenti, l’humidité et le vent.
+        </p>
+      </header>
+
+      <form id="form" class="form" novalidate>
+        <div class="form__row">
+          <label class="sr-only" for="city">Entrez un nom de ville</label>
+          <input id="city" name="city" type="text" placeholder="Ex. Paris, Marseille, Lyon…" autocomplete="off" required />
+          <button class="btn" id="submit" type="submit">Rechercher</button>
         </div>
- 
-    </div>
- 
- 
-    <script src="js/api-weather.js"></script>
+        <div id="status" class="status muted" aria-live="polite"></div>
+      </form>
+
+      <section class="grid">
+        <article class="card">
+          <h2 class="card__title">Température</h2>
+          <p id="temp" class="card__value">—<span class="unit">°C</span></p>
+        </article>
+        <article class="card">
+          <h2 class="card__title">Ressentie</h2>
+          <p id="feels" class="card__value">—<span class="unit">°C</span></p>
+        </article>
+        <article class="card">
+          <h2 class="card__title">Humidité</h2>
+          <p id="humidity" class="card__value">—<span class="unit">%</span></p>
+        </article>
+        <article class="card">
+          <h2 class="card__title">Vent</h2>
+          <p id="wind" class="card__value">—<span class="unit">km/h</span></p>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/api-weather.js"></script>
 </body>
 </html>
