@@ -1,114 +1,63 @@
-/* RESET & BASE */
-*, *::before, *::after { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; }
+html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
 
 body {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  background:
-    linear-gradient(to bottom, rgba(255,255,255,.6), rgba(255,255,255,.6)),
-    url("../img/cloudy_sky.jpg") center/cover no-repeat fixed;
-  color: #0f172a;
-  line-height: 1.5;
+  background: linear-gradient(#b8dfff, #f3f9ff);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  font-family: Arial, sans-serif;
 }
 
-/* Variables */
-:root {
-  --card-bg: rgba(255, 255, 255, 0.85);
-  --card-border: rgba(15, 23, 42, 0.08);
-  --ring: #0ea5e9;
-  --shadow: 0 10px 25px rgba(0,0,0,.08);
-  --radius: 1.25rem;
-  --gap: clamp(.75rem, 1.5vw, 1rem);
-  --maxw: 1000px;
-}
-
-/* Wrapper & card */
-.wrap { min-height: 100%; display: grid; place-items: center; padding: clamp(1rem, 3vw, 2rem); }
 .main {
-  width: min(100%, var(--maxw));
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: clamp(1rem, 3vw, 2rem);
-  backdrop-filter: blur(4px);
-}
-
-/* Header */
-header h1 { text-align: center; margin: 0 0 .25rem; font-size: clamp(1.5rem, 3vw, 2rem); }
-header p { text-align: center; color: #334155; font-size: .95rem; margin: 0 0 1rem; }
-
-/* FORMULAIRE */
-.form {
-  display: grid;
-  gap: .75rem;
-  margin: 0 auto clamp(1rem, 3vw, 1.5rem);
-  width: min(720px, 100%);
-}
-
-/* Label visible au-dessus du champ */
-.form__label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: .25rem;
-  /* Empêche la casse mot par mot observée */
-  white-space: normal;
-  word-break: keep-all;
-}
-
-/* Rangée: seulement input + bouton */
-.form__row {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: .5rem;
-}
-
-input[type="text"] {
-  width: 100%;
-  padding: .875rem 1rem;
-  border: 1px solid var(--card-border);
-  border-radius: .8rem;
-  background: #fff;
-  outline: none;
-}
-
-input[type="text"]:focus {
-  border-color: var(--ring);
-  box-shadow: 0 0 0 3px color-mix(in oklab, var(--ring) 35%, transparent);
-}
-
-.btn {
-  padding: .875rem 1rem;
-  border: 1px solid var(--ring);
-  background: var(--ring);
-  color: #fff;
-  border-radius: .8rem;
-  font-weight: 700;
-  cursor: pointer;
-}
-.btn:disabled { opacity: .6; cursor: not-allowed; }
-
-/* GRILLE DES CARTES */
-.grid { display: grid; gap: var(--gap); grid-template-columns: repeat(2, 1fr); }
-@media (min-width: 768px) { .grid { grid-template-columns: repeat(4, 1fr); } }
-
-.card {
-  background: #fff;
-  border: 1px solid var(--card-border);
+  background-color: rgba(255, 255, 255, 0.85);
+  width: 90%;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
   border-radius: 1rem;
-  padding: 1rem;
-  text-align: center;
-  min-height: 160px;
-  box-shadow: var(--shadow);
-  transition: transform .25s ease, box-shadow .25s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
-.card:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,.12); }
 
-.card__title { font-size: .95rem; color: #334155; }
-.card__value { font-size: clamp(1.25rem, 4vw, 2rem); font-weight: 800; margin-top: .25rem; }
-.unit { font-weight: 600; opacity: .6; margin-left: .125rem; }
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
 
-/* États & accessibilité */
-.status { min-height: 1.25rem; text-align: center; font-size: .95rem; padding: .25rem 0; }
-.error { color: #b91c1c; }
-.muted { color: #64748b; }
+.boxe {
+  height: 120px;
+  width: 120px;
+  border: 1px solid #ddd;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: white;
+  font-size: 1.2rem;
+}
+
+.status {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.status.error {
+  color: #b91c1c;
+}
+
+@media (max-width: 600px) {
+  .boxe {
+    width: 100px;
+    height: 100px;
+    font-size: 1rem;
+  }
+}
